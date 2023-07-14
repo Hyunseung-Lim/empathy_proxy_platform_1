@@ -31,7 +31,7 @@ export const IntroPage = (props) => {
                         <>
                             <div className='explaination'>
                                 Thank you for your interest in participating in our study.
-                                The purpose of this study is to gain insights into the perspectives of individuals who support <b>(topic)</b>.
+                                The purpose of this study is to gain insights into the perspectives of individuals who support <b>Feminist Movement</b>.
                                 Your valuable input will contribute to a deeper understanding of these important social issues.
                             </div>
                             <br/>

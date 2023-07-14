@@ -97,22 +97,29 @@
 
 .survey > .questionsContainer > .questionBox {
     width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 120px;
 }
 
 .survey > .questionsContainer > .questionBox > .question {
     text-align: left;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Inter';
+}
+
+.survey > .questionsContainer > .questionBox > .question.tweet {
+    background-color: #e0f0ff;
+    padding: 15px;
+    border-radius: 8px;
 }
 
 .survey > .questionsContainer > .questionBox > .extraQuestionContainer {
     text-align: left;
+    margin: 30px 0;
 }
 
 .survey > .questionsContainer > .questionBox > .extraQuestionContainer > .question {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .shortform {

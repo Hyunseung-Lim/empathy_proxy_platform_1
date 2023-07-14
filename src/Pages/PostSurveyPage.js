@@ -118,7 +118,7 @@ export const PostSurveyPage = (props) => {
                                 <div className='question'>
                                     <b>1.</b> In general, did you think the given statements of perception, cognition, and action reflected your core values toward the (topic)?
                                 </div>
-                                <Multichoice val={answer[0]} setAnswer={(val) => setIthAnswer(0, val)} labels={['Strongly Reflected', 'Reflected', 'Not Reflected', 'Strongly Not Reflected']}/>
+                                <Multichoice val={answer[0]} setAnswer={(val) => setIthAnswer(0, val)} labels={['Not Strongly Reflected', 'Not Reflected', 'Reflected', 'Strongly Reflected']}/>
                                 <div className='extraQuestionContainer'>
                                     <div className='question'>
                                         <b>1-a.</b> At what point did you think it reflected or not reflected your value?
@@ -130,7 +130,7 @@ export const PostSurveyPage = (props) => {
                                 <div className='question'>
                                     <b>2.</b> Do you think the given statements of perception, cognition, and action empathized with your situation as if you were seeing the given tweets? 
                                 </div>
-                                <Multichoice val={answer[2]} setAnswer={(val) => setIthAnswer(2, val)} labels={['Strongly Empathized', 'Empathized', 'Not Empathized', 'Strongly Not Empathized']}/>
+                                <Multichoice val={answer[2]} setAnswer={(val) => setIthAnswer(2, val)} labels={['Not Strongly Empathized', 'Not Empathized', 'Empathized', 'Strongly Empathized']}/>
                                 <div className='extraQuestionContainer'>
                                     <div className='question'>
                                         <b>2-a.</b> At what point did you think it reflected or not reflected your value?

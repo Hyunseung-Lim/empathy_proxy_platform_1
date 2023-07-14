@@ -74,9 +74,9 @@ export const Task2Page = (props) => {
                             <div className='explainBox'>
                                 <b>Definition for each cognitive information processing steps:</b>
                                 <br/>
-                                <b> • &nbsp;Perception:</b> perceptual process of extracting relevant information, perceiving tone, and sentiment. 
+                                <b> • &nbsp;Perception:</b> process of extracting relevant information, perceiving tone, and sentiment. 
                                 <br/>
-                                <b> • &nbsp;Cognition:</b> Cognitive process to understand and interpret its meaning (e.g., analysis, evaluation)
+                                <b> • &nbsp;Cognition:</b> process to understand and interpret its meaning (e.g., analysis, evaluation)
                                 <br/>
                                 <b> • &nbsp;Action:</b> formulate response or reply to corresponding tweet 
                             </div>
@@ -93,12 +93,21 @@ export const Task2Page = (props) => {
                             <br/>
                             1-Strongly Disagree, 2-Disagree, 3-Neutral, 4-Agree, 5-Strongly Agree
                             </div>
+                            <div className='explainBox'>
+                                <b>Definition for each cognitive information processing steps:</b>
+                                <br/>
+                                <b> • &nbsp;Perception:</b> process of extracting relevant information, perceiving tone, and sentiment. 
+                                <br/>
+                                <b> • &nbsp;Cognition:</b> process to understand and interpret its meaning (e.g., analysis, evaluation)
+                                <br/>
+                                <b> • &nbsp;Action:</b> formulate response or reply to corresponding tweet 
+                            </div>
                             <div className='questionsContainer'>
                                 {
                                     tweet_data.map((data, index) => (
                                         <div className='questionBox' key={index}>
-                                            <div className='question'>
-                                                <b>{index + 1}. Tweet: "</b>{data.Tweet}<b>"</b>
+                                            <div className='question tweet'>
+                                                <b>{index + 1}. Tweet: "</b><i>{data.Tweet}</i><b>"</b>
                                             </div>
                                             <div className='extraQuestionContainer'>
                                                 <div className='question'>
