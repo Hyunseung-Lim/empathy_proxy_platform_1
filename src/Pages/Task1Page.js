@@ -102,7 +102,7 @@ export const Task1Page = (props) => {
                                 If you select the <b>“Non-hate”</b>, you will be provided with an option to check whether the tweet belongs to the case of <b>"Advocate"</b> or not.
                             </div>
                             <div className='explainBox'>
-                                <b> • &nbsp;Advocate:</b> Supports or recommends a particular cause or policy 
+                                <b> • &nbsp;Advocate:</b> Supports or recommends a particular cause or policy (In this case, <i>feminist movement</i>.)
                                 <br/>
                             </div>
                             <div className='explaination'>
@@ -124,7 +124,7 @@ export const Task1Page = (props) => {
                                 <b> • &nbsp;Skip:</b> If you are not confident in which label to assign, select this annotation.
                             </div>
                             <div className='explainBox'>
-                                <b> • &nbsp;Advocate:</b> Supports or recommends a particular cause or policy 
+                                <b> • &nbsp;Advocate:</b> Supports or recommends a particular cause or policy (In this case, <i>feminist movement</i>.)
                                 <br/>
                             </div>
                             <div className='questionsContainer'>
@@ -162,7 +162,7 @@ export const Task1Page = (props) => {
                                                     </div>
                                                     <input className='shortform' name={index} id={4} value={answer[index][4]} onChange={inputHandler}></input>
                                                     <div className='question'>
-                                                        <b>{index + 1}-d.</b> What would be your <b>response</b> to the tweet? 
+                                                        <b>{index + 1}-d.</b> If you retweet, what would be your <b>response</b> to the tweet? 
                                                     </div>
                                                     <input className='shortform' name={index} id={5} value={answer[index][5]} onChange={inputHandler}></input>
                                                 </div>
@@ -191,6 +191,15 @@ export const Task1Page = (props) => {
                             </div>
                         </>
                     }        
+
+                    {
+                        currentPageNum === 8 &&
+                        <div className='explaination'>
+                            Please note that once you proceed to the <b>next</b> page, you will not be able to come back to <b>Task 1</b> section. 
+                            Make sure to carefully review and complete all the answers on this page before proceeding.
+                        </div>
+                    }
+
                     <div className='buttonContainer'>
                         {currentPageNum === 7 ? <div/> : <button className='prevBtn' onClick={prev}>Prev</button>}
                         {currentPageNum === 8 ? 

@@ -93,7 +93,7 @@ export const PostSurveyPage = (props) => {
                 <div className='explaination'>
                         {currentPageNum === 11 ?
                             <>
-                                This is the post-survey about previous <b>task1</b> and <b>task2</b>.
+                                This is the post-survey about previous <b>Task 2</b>.
                                 We would like to gather more detailed information about your experience with the task.
                                 Please take a moment to answer the following questions.
                             </>
@@ -116,7 +116,7 @@ export const PostSurveyPage = (props) => {
                         <div className='questionsContainer'>
                             <div className='questionBox'>
                                 <div className='question'>
-                                    <b>1.</b> In general, did you think the given statements of perception, cognition, and action reflected your core values toward the (topic)?
+                                    <b>1.</b> Do you think the given statements of <i>perception, cognition, and action</i> reflected your core <b>values</b> toward the 'Feminist Movement' in general?
                                 </div>
                                 <Multichoice val={answer[0]} setAnswer={(val) => setIthAnswer(0, val)} labels={['Not Strongly Reflected', 'Not Reflected', 'Reflected', 'Strongly Reflected']}/>
                                 <div className='extraQuestionContainer'>
@@ -128,12 +128,12 @@ export const PostSurveyPage = (props) => {
                             </div>
                             <div className='questionBox'>
                                 <div className='question'>
-                                    <b>2.</b> Do you think the given statements of perception, cognition, and action empathized with your situation as if you were seeing the given tweets? 
+                                    <b>2.</b> Do you think the given statements of <i>perception, cognition, and action</i> serve as a proxy that <b>empathizes</b> with your perspective? 
                                 </div>
                                 <Multichoice val={answer[2]} setAnswer={(val) => setIthAnswer(2, val)} labels={['Not Strongly Empathized', 'Not Empathized', 'Empathized', 'Strongly Empathized']}/>
                                 <div className='extraQuestionContainer'>
                                     <div className='question'>
-                                        <b>2-a.</b> At what point did you think it reflected or not reflected your value?
+                                        <b>2-a.</b> At what point did you think it empathized or not empathized with your perspective?
                                     </div>
                                     <input className='shortform' name={3} value={answer[3]} onChange={inputHandler}/>
                                 </div>
@@ -168,6 +168,15 @@ export const PostSurveyPage = (props) => {
                             </div>
                         )
                     }
+
+                    {
+                        currentPageNum === 13 &&
+                        <div className='explaination'>
+                            Please note that once you proceed to the <b>next</b> page, you will not be able to come back to <b>Post-Survey</b> section. 
+                            Make sure to carefully review and complete all the answers on this page before proceeding.
+                        </div>
+                    }
+
                     <div className='buttonContainer'>
                         {currentPageNum === 11 ? <div/> : <button className='prevBtn' onClick={prev}>Prev</button>}
                         {currentPageNum === 13 ? 

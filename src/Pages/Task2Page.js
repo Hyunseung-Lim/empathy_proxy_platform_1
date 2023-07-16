@@ -81,7 +81,7 @@ export const Task2Page = (props) => {
                                 <b> • &nbsp;Action:</b> formulate response or reply to corresponding tweet 
                             </div>
                             <div className='explaination'>
-                                For each cognitive information processing step (perception, cognition, and action), please rate the opinion alignment based on the given context.
+                                For each cognitive information processing step (perception, cognition, and action), please rate the <b>opinion alignment</b> based on the given context.
                                 This assessment will help us examine the alignment between LLM’s cognitive reasoning and your own perspectives.
                             </div>
                         </>
@@ -128,7 +128,16 @@ export const Task2Page = (props) => {
                                 }
                             </div>
                         </>
-                    }        
+                    }    
+
+                    {
+                        currentPageNum === 10 &&
+                        <div className='explaination'>
+                            Please note that once you proceed to the <b>next</b> page, you will not be able to come back to <b>Task 2</b> section. 
+                            Make sure to carefully review and complete all the answers on this page before proceeding.
+                        </div>
+                    }
+
                     <div className='buttonContainer'>
                         {currentPageNum === 9 ? <div/> : <button className='prevBtn' onClick={prev}>Prev</button>}
                         {currentPageNum === 10 ? 

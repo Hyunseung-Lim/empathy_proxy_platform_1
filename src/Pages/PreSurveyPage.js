@@ -113,12 +113,21 @@ export const PreSurveyPage = (props) => {
                                         <div className='question'>
                                             {index+1}. {question}
                                         </div>
-                                        <Likertchoice val={answer[index + 2]} id={index + 2} setAnswer={(val) => setIthAnswer(index + 2, val)} labels={['Strongly disagree', 'Disagree', 'Agree', 'Strongly Agree']} content={null}/>
+                                        <Likertchoice val={answer[index + 2]} id={index + 2} setAnswer={(val) => setIthAnswer(index + 2, val)} labels={['Strongly disagree', 'Disagree', 'Agree', 'Strongly agree']} content={null}/>
                                     </div>
                                 ))
                             }           
                         </div>
                     }
+
+                    {
+                        currentPageNum === 6 &&
+                        <div className='explaination'>
+                            Please note that once you proceed to the <b>next</b> page, you will not be able to come back to <b>Pre-Survey</b> section. 
+                            Make sure to carefully review and complete all the answers on this page before proceeding.
+                        </div>
+                    }
+
                     <div className='buttonContainer'>
                         {currentPageNum === 5 ? <div/> : <button className='prevBtn' onClick={prev}>Prev</button>}
                         {currentPageNum === 6 ? 

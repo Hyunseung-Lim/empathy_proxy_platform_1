@@ -31,7 +31,7 @@ export const IntroPage = (props) => {
                         <>
                             <div className='explaination'>
                                 Thank you for your interest in participating in our study.
-                                The purpose of this study is to gain insights into the perspectives of individuals who support <b>Feminist Movement</b>.
+                                The purpose of this study is to gain insights into the perspectives of individuals who support <b>'Feminist Movement'</b>.
                                 Your valuable input will contribute to a deeper understanding of these important social issues.
                             </div>
                             <br/>
@@ -64,8 +64,13 @@ export const IntroPage = (props) => {
                                 </div>
                                 <br/>
                                 <div className='explaination'>
-                                    If you have any questions or concerns about the study, please contact 000@email.com. Thank you for considering participating in our study. 
+                                    During the task, please do <b>not</b> click 'back button' in the browser.
+                                    If you want to go back to previous page, use <b>'Prev'</b> button in the bottom of the page.
+                                    If you click the 'back button', your data will be initialized.
+                                    Also, you will not be able to move between tasks.
+                                    If you have any questions or concerns about the study, please contact <i>dbwk18@kaist.ac.kr</i>. Thank you for considering participating in our study. 
                                 </div>
+                                <br/>
                             </>
                         )
                     }
