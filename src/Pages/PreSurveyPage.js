@@ -67,7 +67,7 @@ export const PreSurveyPage = (props) => {
         //
         // const userTotalRef = ref(firebaseDB, 'users/');
         const pointerRef = ref(firebaseDB, 'manage/pointer');
-        let numOfUsers = -1;
+        let numOfUsers = 0;
 
         await get(pointerRef).then((snapshot) => {
             if (snapshot.exists()) {
