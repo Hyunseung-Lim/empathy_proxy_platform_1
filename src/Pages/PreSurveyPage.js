@@ -64,14 +64,18 @@ export const PreSurveyPage = (props) => {
 
     const writeUserData = async () => {
 
-        //
         // const userTotalRef = ref(firebaseDB, 'users/');
+        const userRef = ref(firebaseDB, 'users/' + id);
+        const dataObject = {};
+        for (let i = 0; i < answer.length; i++) {
+            dataObject[`pre_answer_${i < 10 ? '0' + String(i + 1): i + 1}`] = answer[i];
+        }
         const pointerRef = ref(firebaseDB, 'manage/pointer');
-        let numOfUsers = 0;
+        let updatePointer = 0;
 
         await get(pointerRef).then((snapshot) => {
             if (snapshot.exists()) {
-                numOfUsers = snapshot.val();
+                updatePointer = snapshot.val() ;
                 const confirmRef = ref(firebaseDB, 'manage/isConfirmed');
                 let confirmedBox = [];
 
@@ -79,21 +83,27 @@ export const PreSurveyPage = (props) => {
                     if (snapshot.exists()) {
                         confirmedBox = snapshot.val();
                         while (true) {
-                            if (numOfUsers >= 30) {
-                                numOfUsers = -1;
+                            if (updatePointer >= 40) {
+                                updatePointer = 1;
                                 const isAllConfirmed = confirmedBox.every(val => val === 1);
                                 if(isAllConfirmed) {
-                                    set(confirmRef, new Array(30).fill(0));
-                                    numOfUsers = 0;
+                                    set(confirmRef, new Array(40).fill(0));
+                                    set(pointerRef, updatePointer);
                                     break;
                                 }
                             }
-                            if(numOfUsers !== -1 & confirmedBox[numOfUsers] === 0) {
+                            if (confirmedBox[updatePointer] === 1) {
+                                updatePointer += 1;
+                            }
+                            if(confirmedBox[updatePointer] === 0) {
+                                updatePointer += 1;
+                                set(pointerRef, updatePointer);
                                 break;
                             }
-                            numOfUsers += 1;
                         }
                     }
+                    set(userRef, {user_num: updatePointer-1});
+                    push(userRef, dataObject);
                 }).catch((error)=>{
                     console.log("No data available");
                 }); 
@@ -103,15 +113,6 @@ export const PreSurveyPage = (props) => {
           }).catch((error) => {
             console.error(error);
         });
-        await set(pointerRef, numOfUsers + 1);
-
-        const userRef = ref(firebaseDB, 'users/' + id);
-        const dataObject = {};
-        for (let i = 0; i < answer.length; i++) {
-            dataObject[`pre_answer_${i < 10 ? '0' + String(i + 1): i + 1}`] = answer[i];
-        }
-        await set(userRef, {user_num: numOfUsers});
-        await push(userRef, dataObject);
     }
 
     const clickLink = async () => {

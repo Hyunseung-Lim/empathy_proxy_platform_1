@@ -5,12 +5,14 @@ import { Likertchoice } from '../Components/Likertchoice/Likertchoice';
 import { firebaseDB } from '../firebase';
 import { ref, push, get } from "firebase/database";
 
-import feminist_sample_1 from '../Data/Pilot/sample_feminist_150(1).json';
-import feminist_sample_2 from '../Data/Pilot/sample_feminist_150(2).json';
-import feminist_sample_3 from '../Data/Pilot/sample_feminist_150(3).json';
-import feminist_sample_4 from '../Data/Pilot/sample_feminist_150(4).json';
-import feminist_sample_5 from '../Data/Pilot/sample_feminist_150(5).json';
-import feminist_sample_6 from '../Data/Pilot/sample_feminist_150(6).json';
+import feminist_sample_1 from '../Data/Study1/sample_feminist_200(1).json';
+import feminist_sample_2 from '../Data/Study1/sample_feminist_200(2).json';
+import feminist_sample_3 from '../Data/Study1/sample_feminist_200(3).json';
+import feminist_sample_4 from '../Data/Study1/sample_feminist_200(4).json';
+import feminist_sample_5 from '../Data/Study1/sample_feminist_200(5).json';
+import feminist_sample_6 from '../Data/Study1/sample_feminist_200(6).json';
+import feminist_sample_7 from '../Data/Study1/sample_feminist_200(7).json';
+import feminist_sample_8 from '../Data/Study1/sample_feminist_200(8).json';
 
 import './page.css';
 
@@ -72,29 +74,37 @@ export const Task2Page = (props) => {
         await get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
                 const userNum = snapshot.val().user_num;
-                if(userNum % 6 === 0) {
+                if(userNum % 8 === 0) {
                     setTweetData(shuffleArray(feminist_sample_1));
-                    setAnswer(Array(feminist_sample_1.length).fill(['', '', '', '', '', '', '']));
+                    setAnswer(Array(feminist_sample_1.length).fill(['', '']));
                 }
-                else if (userNum % 6 === 1) {
+                else if (userNum % 8 === 1) {
                     setTweetData(shuffleArray(feminist_sample_2));
-                    setAnswer(Array(feminist_sample_2.length).fill(['', '', '', '', '', '', '']));
+                    setAnswer(Array(feminist_sample_2.length).fill(['', '']));
                 }
-                else if (userNum % 6 === 2) {
+                else if (userNum % 8 === 2) {
                     setTweetData(shuffleArray(feminist_sample_3));
-                    setAnswer(Array(feminist_sample_3.length).fill(['', '', '', '', '', '', '']));
+                    setAnswer(Array(feminist_sample_3.length).fill(['', '']));
                 }
-                else if (userNum % 6 === 3) {
+                else if (userNum % 8 === 3) {
                     setTweetData(shuffleArray(feminist_sample_4));
-                    setAnswer(Array(feminist_sample_4.length).fill(['', '', '', '', '', '', '']));
+                    setAnswer(Array(feminist_sample_4.length).fill(['', '']));
                 }
-                else if (userNum % 6 === 4) {
+                else if (userNum % 8 === 4) {
                     setTweetData(shuffleArray(feminist_sample_5));
-                    setAnswer(Array(feminist_sample_5.length).fill(['', '', '', '', '', '', '']));
+                    setAnswer(Array(feminist_sample_5.length).fill(['', '']));
+                }
+                else if (userNum % 8 === 5) {
+                    setTweetData(shuffleArray(feminist_sample_6));
+                    setAnswer(Array(feminist_sample_5.length).fill(['', '']));
+                }
+                else if (userNum % 8 === 6) {
+                    setTweetData(shuffleArray(feminist_sample_7));
+                    setAnswer(Array(feminist_sample_7.length).fill(['', '']));
                 }
                 else {
-                    setTweetData(shuffleArray(feminist_sample_6));
-                    setAnswer(Array(feminist_sample_6.length).fill(['', '', '', '', '', '', '']));
+                    setTweetData(shuffleArray(feminist_sample_8));
+                    setAnswer(Array(feminist_sample_8.length).fill(['', '']));
                 }
             } else {
                 console.log("No data available");
