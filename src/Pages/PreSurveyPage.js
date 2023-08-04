@@ -84,9 +84,10 @@ export const PreSurveyPage = (props) => {
                         confirmedBox = snapshot.val();
                         while (true) {
                             if (updatePointer >= 40) {
-                                updatePointer = 1;
+                                updatePointer = 0;
                                 const isAllConfirmed = confirmedBox.every(val => val === 1);
                                 if(isAllConfirmed) {
+                                    updatePointer += 1;
                                     set(confirmRef, new Array(40).fill(0));
                                     set(pointerRef, updatePointer);
                                     break;
@@ -95,7 +96,7 @@ export const PreSurveyPage = (props) => {
                             if (confirmedBox[updatePointer] === 1) {
                                 updatePointer += 1;
                             }
-                            if(confirmedBox[updatePointer] === 0) {
+                            if (confirmedBox[updatePointer] === 0) {
                                 updatePointer += 1;
                                 set(pointerRef, updatePointer);
                                 break;
