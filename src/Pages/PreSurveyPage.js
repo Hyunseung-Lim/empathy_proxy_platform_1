@@ -85,19 +85,14 @@ export const PreSurveyPage = (props) => {
                                 if(isAllConfirmed) {
                                     set(confirmRef, new Array(30).fill(0));
                                     numOfUsers = 0;
-                                    const updatePointer = numOfUsers + 1;
-                                    set(pointerRef, updatePointer);
                                     break;
                                 }
                             }
                             if(numOfUsers !== -1 & confirmedBox[numOfUsers] === 0) {
-                                const updatePointer = numOfUsers + 1;
-                                set(pointerRef, updatePointer);
                                 break;
                             }
                             numOfUsers += 1;
                         }
-
                     }
                 }).catch((error)=>{
                     console.log("No data available");
@@ -108,9 +103,9 @@ export const PreSurveyPage = (props) => {
           }).catch((error) => {
             console.error(error);
         });
+        await set(pointerRef, numOfUsers + 1);
 
         const userRef = ref(firebaseDB, 'users/' + id);
-        
         const dataObject = {};
         for (let i = 0; i < answer.length; i++) {
             dataObject[`pre_answer_${i < 10 ? '0' + String(i + 1): i + 1}`] = answer[i];
