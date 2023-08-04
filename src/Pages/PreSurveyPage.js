@@ -72,7 +72,6 @@ export const PreSurveyPage = (props) => {
         await get(pointerRef).then((snapshot) => {
             if (snapshot.exists()) {
                 numOfUsers = snapshot.val();
-                let updatePointer = numOfUsers + 1;
                 const confirmRef = ref(firebaseDB, 'manage/isConfirmed');
                 let confirmedBox = [];
 
@@ -80,22 +79,23 @@ export const PreSurveyPage = (props) => {
                     if (snapshot.exists()) {
                         confirmedBox = snapshot.val();
                         while (true) {
-                            console.log(updatePointer);
-                            if (updatePointer >= 30) {
-                                updatePointer = -1;
+                            if (numOfUsers >= 30) {
+                                numOfUsers = -1;
                                 const isAllConfirmed = confirmedBox.every(val => val === 1);
                                 if(isAllConfirmed) {
                                     set(confirmRef, new Array(30).fill(0));
-                                    updatePointer = 0;
+                                    numOfUsers = 0;
+                                    const updatePointer = numOfUsers + 1;
                                     set(pointerRef, updatePointer);
                                     break;
                                 }
                             }
-                            if(updatePointer !== -1 & confirmedBox[updatePointer] === 0) {
+                            if(numOfUsers !== -1 & confirmedBox[numOfUsers] === 0) {
+                                const updatePointer = numOfUsers + 1;
                                 set(pointerRef, updatePointer);
                                 break;
                             }
-                            updatePointer += 1;
+                            numOfUsers += 1;
                         }
 
                     }
