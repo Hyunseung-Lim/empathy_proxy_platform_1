@@ -179,7 +179,7 @@ export const Task2Page = (props) => {
                             <div className='explaination'>
                                 For each cognitive information processing step (perception, cognition, and action), please rate the <b>opinion alignment</b> based on the given context.
                                 This assessment will help us examine the alignment between LLM’s cognitive reasoning and your own perspectives.
-                                If you provide sincere responses to the open-ended questions, there will be additional payment provided. 
+                                If you provide sincere responses to the open-ended questions, there will be <b>additional payment</b> provided. 
                             </div>
                         </>
                     : 
