@@ -76,35 +76,35 @@ export const Task2Page = (props) => {
                 const userNum = snapshot.val().user_num;
                 if(userNum % 8 === 0) {
                     setTweetData(shuffleArray(feminist_sample_1));
-                    setAnswer(Array(feminist_sample_1.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_1.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 1) {
                     setTweetData(shuffleArray(feminist_sample_2));
-                    setAnswer(Array(feminist_sample_2.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_2.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 2) {
                     setTweetData(shuffleArray(feminist_sample_3));
-                    setAnswer(Array(feminist_sample_3.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_3.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 3) {
                     setTweetData(shuffleArray(feminist_sample_4));
-                    setAnswer(Array(feminist_sample_4.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_4.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 4) {
                     setTweetData(shuffleArray(feminist_sample_5));
-                    setAnswer(Array(feminist_sample_5.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_5.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 5) {
                     setTweetData(shuffleArray(feminist_sample_6));
-                    setAnswer(Array(feminist_sample_5.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_5.length).fill(['', '', '', '', '', '']));
                 }
                 else if (userNum % 8 === 6) {
                     setTweetData(shuffleArray(feminist_sample_7));
-                    setAnswer(Array(feminist_sample_7.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_7.length).fill(['', '', '', '', '', '']));
                 }
                 else {
                     setTweetData(shuffleArray(feminist_sample_8));
-                    setAnswer(Array(feminist_sample_8.length).fill(['', '']));
+                    setAnswer(Array(feminist_sample_8.length).fill(['', '', '', '', '', '']));
                 }
             } else {
                 console.log("No data available");
@@ -231,9 +231,7 @@ export const Task2Page = (props) => {
                                                 <div className='question'>
                                                     <b>{index + 1}-e*.</b> (Optional) Why do you think it’s well represented or not?
                                                 </div>
-                                                LLM Related: <input className='shortform' name={index} id={5} value={answer[index][5]} onChange={inputHandler}></input>
-                                                Content Related: <input className='shortform' name={index} id={6} value={answer[index][6]} onChange={inputHandler}></input>
-                                                 
+                                                <input className='shortform' name={index} id={5} value={answer[index][5]} onChange={inputHandler}></input>
                                             </div>
                                         </div>
                                     ))
