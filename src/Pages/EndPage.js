@@ -38,7 +38,7 @@ export const EndPage = (props) => {
                     <br/>
                     <br/>
                     <br/>
-                    Completion code : <a style={{color: "#0481FF"}}><b>C1LSUP5Q</b></a>
+                    Completion code : <a style={{color: "#0481FF"}}><b>CNWIBD35</b></a>
                 </div>
                 <div className='footer'/>
             </div>
