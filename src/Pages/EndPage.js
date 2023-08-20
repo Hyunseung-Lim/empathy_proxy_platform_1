@@ -34,7 +34,7 @@ export const EndPage = (props) => {
                     <b>Thank you for participating our study.</b>
                     <br/>
                     <br/>
-                    Once our analysis is done, we will share the insights you provided to us.
+                    Once our analysis is done, we will share the insights via email.
                     {/* Copy and paste the following <b>completion code</b> in Prolific page. */}
                     <br/>
                     <br/>

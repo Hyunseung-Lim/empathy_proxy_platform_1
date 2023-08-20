@@ -70,7 +70,7 @@ export const Task2Page = (props) => {
     }
 
     const getUserNum = async () => {
-        const userRef = ref(firebaseDB, 'users/' + id);
+        const userRef = ref(firebaseDB, 'users/' + id.replace('.', '*'));
         await get(userRef).then((snapshot) => {
             if (snapshot.exists()) {
                 const userNum = snapshot.val().user_num;
@@ -116,7 +116,8 @@ export const Task2Page = (props) => {
 
     const writeUserData = async () => {
         // create a reference to the user's specific location in the database
-        const userRef = ref(firebaseDB, 'users/' + id);
+        const userRef = ref(firebaseDB, 'users/' + id.replace('.', '*'));
+
     
         const dataObject = {};
         for (let i = 0; i < answer.length; i++) {

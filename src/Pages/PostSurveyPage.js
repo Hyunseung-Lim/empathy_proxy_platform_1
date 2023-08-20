@@ -74,7 +74,7 @@ export const PostSurveyPage = (props) => {
 
     const writeUserData = async () => {
         // create a reference to the user's specific location in the database
-        const userRef = ref(firebaseDB, 'users/' + id);
+        const userRef = ref(firebaseDB, 'users/' + id.replace('.', '*'));
         const confirmRef = ref(firebaseDB, 'manage/isConfirmed');
     
         let dataObject = {};

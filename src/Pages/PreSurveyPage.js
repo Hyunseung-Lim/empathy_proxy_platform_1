@@ -65,7 +65,7 @@ export const PreSurveyPage = (props) => {
     const writeUserData = async () => {
 
         // const userTotalRef = ref(firebaseDB, 'users/');
-        const userRef = ref(firebaseDB, 'users/' + id);
+        const userRef = ref(firebaseDB, 'users/' + id.replace('.', '*'));
         const dataObject = {};
         for (let i = 0; i < answer.length; i++) {
             dataObject[`pre_answer_${i < 10 ? '0' + String(i + 1): i + 1}`] = answer[i];
@@ -103,7 +103,7 @@ export const PreSurveyPage = (props) => {
                             }
                         }
                     }
-                    set(userRef, {user_num: updatePointer-1});
+                    set(userRef, {user_num: updatePointer-1, user_name: id});
                     push(userRef, dataObject);
                 }).catch((error)=>{
                     console.log("No data available");
