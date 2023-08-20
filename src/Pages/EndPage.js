@@ -34,11 +34,12 @@ export const EndPage = (props) => {
                     <b>Thank you for participating our study.</b>
                     <br/>
                     <br/>
-                    Copy and paste the following <b>completion code</b> in Prolific page.
+                    Once our analysis is done, we will share the insights you provided to us.
+                    {/* Copy and paste the following <b>completion code</b> in Prolific page. */}
                     <br/>
                     <br/>
                     <br/>
-                    Completion code : <a style={{color: "#0481FF"}}><b>CNWIBD35</b></a>
+                    {/* Completion code : <a style={{color: "#0481FF"}}><b>CNWIBD35</b></a> */}
                 </div>
                 <div className='footer'/>
             </div>

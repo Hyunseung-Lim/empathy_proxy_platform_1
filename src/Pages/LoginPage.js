@@ -15,12 +15,12 @@ export const LoginPage = (props) => {
     return(
         <div className='page'>
             <div className='loginHeader'>
-                Write your <b>Prolific ID</b> below. <br/>
-                The ID will be used for the purpose of confirming your participation payment in the survey.
+                Write your <b>Email Address</b> below. <br/>
+                The email address will be used for the purpose of sharing the results of the survey.
             </div>
             <div className='loginContainer'>
                 <div className='title'>
-                    Prolific ID
+                    Email Address
                 </div>
                 <input onChange={inputHandler}></input>
                 <Link to={id === '' ? '' : '/intro'} state={{id: id}} className='loginBtn'>Login</Link>
